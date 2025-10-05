@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<head>
+    <title>Listado de Pedidos</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+
+                <form th:action="@{/add-order}" th:object="${order}" method="post">
+                    <div class="form-group mt-4">
+                        <label for="name">Nombre:</label>
+                        <input th:field="*{name}" type="text" class="form-control" id="name" name="name" placeholder="Ingrese el nombre">
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="status">Status:</label>
+                        <input th:field="*{status}" type="text" class="form-control" id="status" name="status" placeholder="Ingrese el status">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+                </form>
+
+                <div th:if="${success != null and success}">
+                    <p class="text-success">Pedido agregado correctamente ✅</p>
+                </div>
+
+                <div th:if="${success != null and !success}">
+                    <p class="text-danger">Ocurrió un error al agregar el pedido ❌</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

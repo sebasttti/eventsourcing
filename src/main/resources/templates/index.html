@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1>Bienvenido a la aplicación de Event Sourcing</h1>
+                <p>El listado de pedidos es cargado desde el Real Model, representado
+                    en este <a th:href="@{/real_model.json}" target="_blank">archivo JSON</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
